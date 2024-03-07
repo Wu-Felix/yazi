@@ -142,6 +142,10 @@ rules = [
 	{ mime = "application/x-bzip2",         fg = "#f5c2e7" },
 	{ mime = "application/x-7z-compressed", fg = "#f5c2e7" },
 	{ mime = "application/x-rar",           fg = "#f5c2e7" },
+  
+  
+	{ name = "*.opj", fg = "#f5c2e7" },
+	{ name = "*.brd", fg = "#f5c2e7" },
 
 	# Fallback
 	{ name = "*", fg = "#cdd6f4" },
