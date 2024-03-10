@@ -123,6 +123,14 @@ previewers = [
 	{ name = "*", exec = "file" },
 ]
 
+prepend_previewers = [
+  { name = "*.md", exec = "glow" },
+{mime = "audio/*",exec = "exifaudio"},
+]
+append_previewers = [
+  { name = "*", exec = "hexyl" },
+]
+
 [input]
 # cd
 cd_title  = "Change directory:"

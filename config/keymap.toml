@@ -6,19 +6,16 @@
 
   prepend_keymap = [
 	# 智能进入目录或打开文件
-	{ on = [ "i" ], exec = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-	{ on = [ "<Right>" ], exec = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-	# 飞雷神标签
-	{ on = [ "m" ], exec = "plugin bookmarks --args=save", desc = "Save current position as a bookmark"}, 
-	{ on = [ "'" ],	exec = "plugin bookmarks --args=jump", desc = "Jump to a bookmark" },
-	{ on = [ "b", "d" ], exec = "plugin bookmarks --args=delete", desc = "Delete a bookmark"}, 
-	{ on = [ "b", "D" ], exec = "plugin bookmarks --args=delete_all", desc = "Delete all bookmarks"}, 
+	{ on = [ "o" ], exec = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
+	{ on = [ "l" ], exec = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
 	# 给所有文件打上随机标签跳转，有点类似vimiumc打开超链接的方式 
-	{ on = [ "s" ], exec = "plugin keyjump --sync", desc = "Keyjump (Keep mode)"}, 
-	# 预览最大化
-	{ on = [ "F" ], exec = "plugin --sync max-preview" },
-	# 隐藏预览
-	{ on = [ "z","m" ], exec = "plugin --sync hide-preview" },
+	{ on = [ "s" ], exec = "plugin keyjump --args=keep", desc = "Keyjump (Keep mode)"},
+	{ on = [ "s" ], exec = "plugin keyjump", desc = "Keyjump (Normal mode)"},
+	{ on = [ "s" ], exec = "plugin keyjump --args=global", desc = "Keyjump (Global mode)"},
+	{ on = [ "s" ], exec = "plugin keyjump --args=global once", desc = "Keyjump (once Global mode)"},
+	{ on = [ "s" ], exec = "plugin keyjump --args=select", desc = "Keyjump (Select mode)"},
+
+	{ on = [ "m" ], exec = "plugin bookmarks --args=save", desc = "Keyjump (Select mode)"},
 ]
 
 keymap = [
@@ -93,7 +90,7 @@ keymap = [
 	{ on = [ ";" ],         exec = "shell",                                                desc = "Run a shell command" },
 	{ on = [ ":" ],         exec = "shell --block",                                        desc = "Run a shell command (block the UI until the command finishes)" },
 	{ on = [ "." ],         exec = "hidden toggle",                                        desc = "Toggle the visibility of hidden files" },
-	# { on = [ "s" ],         exec = "search fd",                                            desc = "Search files by name using fd" },
+	{ on = [ "s" ],         exec = "search fd",                                            desc = "Search files by name using fd" },
 	{ on = [ "S" ],         exec = "search rg",                                            desc = "Search files by content using ripgrep" },
 	{ on = [ "<C-s>" ],     exec = "search none",                                          desc = "Cancel the ongoing search" },
 	{ on = [ "z" ],         exec = "jump zoxide",                                          desc = "Jump to a directory using zoxide" },
