@@ -15,10 +15,10 @@
 	{ on = [ "s" ], run = "plugin keyjump --args=global once", desc = "Keyjump (once Global mode)"},
 	{ on = [ "s" ], run = "plugin keyjump --args=select", desc = "Keyjump (Select mode)"},
 
-	{ on = [ "m" ], run = "plugin bookmarks --args=save", desc = "Keyjump (Select mode)"},
-	{ on = [ "'" ], run = "plugin bookmarks --args=jump", desc = "Jump to a bookmark"},
-	{ on = [ "b","d" ], run = "plugin bookmarks --args=delete", desc = "Delete a bookmark"},
-	{ on = [ "b","D" ], run = "plugin bookmarks --args=delete_all", desc = "Delete all bookmarks"},
+	# { on = [ "m" ], run = "plugin bookmarks --args=save", desc = "Keyjump (Select mode)"},
+	# { on = [ "'" ], run = "plugin bookmarks --args=jump", desc = "Jump to a bookmark"},
+	# { on = [ "b","d" ], run = "plugin bookmarks --args=delete", desc = "Delete a bookmark"},
+	# { on = [ "b","D" ], run = "plugin bookmarks --args=delete_all", desc = "Delete all bookmarks"},
 ]
 
 keymap = [
@@ -93,8 +93,8 @@ keymap = [
 	{ on = [ ";" ],         run = "shell",                                                desc = "Run a shell command" },
 	{ on = [ ":" ],         run = "shell --block",                                        desc = "Run a shell command (block the UI until the command finishes)" },
 	{ on = [ "." ],         run = "hidden toggle",                                        desc = "Toggle the visibility of hidden files" },
-	{ on = [ "s" ],         run = "search fd",                                            desc = "Search files by name using fd" },
-	{ on = [ "S" ],         run = "search rg",                                            desc = "Search files by content using ripgrep" },
+	{ on = ["f", "d" ],         run = "search fd",                                            desc = "Search files by name using fd" },
+	{ on = ["f" ,"g" ],         run = "search rg",                                            desc = "Search files by content using ripgrep" },
 	{ on = [ "<C-s>" ],     run = "search none",                                          desc = "Cancel the ongoing search" },
 	{ on = [ "z" ],         run = "jump zoxide",                                          desc = "Jump to a directory using zoxide" },
 	{ on = [ "Z" ],         run = "jump fzf",                                             desc = "Jump to a directory, or reveal a file using fzf" },
@@ -112,7 +112,7 @@ keymap = [
 	{ on = [ "c", "n" ], run = "copy name_without_ext", desc = "Copy the name of the file without the extension" },
 
 	# Filter
-	{ on = [ "f" ], run = "filter --smart", desc = "Filter the files" },
+	{ on = [ "f","f" ], run = "filter --smart", desc = "Filter the files" },
 
 	# Find
 	{ on = [ "/" ], run = "find --smart",            desc = "Find next file" },
